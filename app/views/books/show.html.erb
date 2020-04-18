@@ -35,7 +35,10 @@
 		<h2>Book comment</h2>
 		<table class="table table-inverse">
 			<% @book.book_comments.each do |book_comment| %>
-				<tr><td><%= book_comment.comment %></td></tr>
+				<tr>
+					<td><%= book_comment.comment %></td>
+					<td><%= link_to "Destroy", book_book_comments_path(book_comment), method: :delete,  data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger" %></td>
+				</tr>
 			<% end %>
 		</table>
 
